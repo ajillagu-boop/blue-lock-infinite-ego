@@ -2,265 +2,201 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<meta name="theme-color" content="#071426">
-<meta name="description" content="BLUE LOCK: INFINITE EGO RPG - Mobile Edition">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#07111f">
+<title>BLUE LOCK: INFINITE EGO 3D</title>
 <link rel="manifest" href="manifest.json">
-<title>BLUE LOCK: INFINITE EGO RPG</title>
 <style>
-:root{--bg:#06101f;--panel:#0d2038;--panel2:#102b4b;--line:#1d4268;--blue:#27a8ff;--cyan:#65e5ff;--gold:#ffc857;--text:#eff7ff;--muted:#9cb4cb;--red:#ff5474}
-*{box-sizing:border-box}html,body{margin:0;background:radial-gradient(circle at 50% -10%,#164878 0,#08182b 40%,#040b15 100%);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif;min-height:100%;overscroll-behavior:none}
-body{padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);max-width:760px;margin:auto}
-button{font:inherit;color:inherit;border:0;cursor:pointer}
-.app{min-height:100vh;padding-bottom:78px}
-header{padding:18px 16px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.brand small{display:block;color:var(--cyan);font-weight:800;letter-spacing:2px;font-size:10px}
-.brand h1{font-size:19px;line-height:1.1;margin:4px 0 0;font-weight:950;letter-spacing:.3px}
-.brand h1 span{color:var(--blue)}
-.pill{border:1px solid #28618d;background:#0c2946;border-radius:999px;padding:8px 11px;font-size:11px;font-weight:800;color:#9de5ff;white-space:nowrap}
-.hero{margin:0 14px 14px;padding:18px;border:1px solid #24527b;border-radius:20px;background:linear-gradient(120deg,#123c65,#0b2039 65%,#102e4c);position:relative;overflow:hidden;min-height:145px}
-.hero:after{content:"EGO";position:absolute;right:-4px;bottom:-27px;font-size:100px;font-weight:1000;color:#ffffff0b;font-style:italic}
-.hero .eyebrow{font-size:10px;letter-spacing:2px;color:#83dfff;font-weight:900}
-.hero h2{font-size:25px;line-height:1.08;margin:8px 0;max-width:270px}
-.hero p{font-size:12px;color:#bdd4e9;margin:0;max-width:260px;line-height:1.5}
-.hero .hero-mark{position:absolute;right:18px;top:22px;font-size:60px;font-weight:1000;color:#75d7ff;transform:skew(-12deg);text-shadow:0 0 24px #27a8ff88}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 14px 16px}
-.stat{background:#0b1c31;border:1px solid #193c5c;border-radius:13px;padding:10px}
-.stat small{color:var(--muted);font-size:10px;display:block}
-.stat strong{display:block;font-size:17px;margin-top:3px}
-.stat strong.blue{color:var(--cyan)}
-.section{padding:0 14px 16px}
-.section-head{display:flex;align-items:center;justify-content:space-between;margin:5px 0 10px}
-.section-head h3{font-size:14px;margin:0;letter-spacing:.5px}
-.section-head span{font-size:10px;color:var(--muted)}
-.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.tile{background:linear-gradient(145deg,#123252,#0b1b30);border:1px solid #21496e;border-radius:15px;padding:13px 10px;text-align:left;min-height:92px}
-.tile .ico{font-size:23px;display:block;margin-bottom:8px}
-.tile b{font-size:12px;display:block}
-.tile small{font-size:10px;color:var(--muted)}
-.nav{position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,760px);padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#06111fee;backdrop-filter:blur(16px);border-top:1px solid #1b3a58;display:grid;grid-template-columns:repeat(5,1fr)}
-.nav button{background:transparent;color:#7895af;font-size:9px;padding:5px 1px;display:flex;flex-direction:column;align-items:center;gap:3px}
-.nav button span{font-size:19px}.nav button.active{color:#74dfff}
-.page{display:none}.page.active{display:block}
-.panel{margin:0 14px 13px;padding:14px;background:linear-gradient(145deg,#0e2540,#09182a);border:1px solid #1d4265;border-radius:17px}
-.btn{background:linear-gradient(100deg,#087bd0,#24b8ff);padding:12px 15px;border-radius:12px;font-size:12px;font-weight:900;color:white;box-shadow:0 7px 20px #087bd044}
-.btn.secondary{background:#163653;border:1px solid #2c5b80;box-shadow:none}
-.btn.gold{background:linear-gradient(100deg,#b97818,#f4c45c);color:#1b1609}
-.btn:disabled{opacity:.45}
-.gacha-stage{padding:22px 15px;text-align:center;background:radial-gradient(circle at center,#174c78,#0a1b30 68%);border:1px solid #27608a;border-radius:18px}
-.gacha-logo{font-size:54px;font-weight:1000;font-style:italic;color:#70dfff;text-shadow:0 0 28px #18aaff;line-height:1}
-.gacha-stage h2{margin:10px 0 4px;font-size:20px}
-.gacha-stage p{font-size:11px;color:#bad2e8;margin:0 0 15px}
-.gacha-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
-.gacha-actions .btn{width:100%}
-input,select{background:#07182a;border:1px solid #2a5276;color:white;padding:11px;border-radius:10px;width:100%;font:inherit}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.char{position:relative;overflow:hidden;border-radius:15px;border:1px solid #285276;background:linear-gradient(160deg,#15395b,#09192b);padding:11px;min-height:142px}
-.char:before{content:"";position:absolute;right:-18px;top:10px;width:85px;height:85px;border-radius:50%;background:var(--glow,#28aaff);filter:blur(35px);opacity:.35}
-.char .rarity{font-size:9px;font-weight:1000;letter-spacing:1px;color:var(--rarity,#69dfff)}
-.char .avatar{font-size:37px;margin:9px 0 4px;filter:drop-shadow(0 0 10px #38bfff66)}
-.char b{display:block;font-size:13px}
-.char small{display:block;color:#9eb7cd;font-size:10px;margin-top:3px}
-.char .power{position:absolute;right:10px;bottom:10px;color:#b8eaff;font-size:10px;font-weight:900}
-.rSSR{--rarity:#f6d36c;--glow:#eab84b}.rUR{--rarity:#ff79a5;--glow:#f34c89}.rLR{--rarity:#b89bff;--glow:#8d65ff}.rEX{--rarity:#6ff4ff;--glow:#16cfff}
-.filter-row{display:flex;gap:7px;overflow:auto;padding:0 0 10px}
-.chip{background:#102943;border:1px solid #244b6c;border-radius:999px;padding:8px 11px;font-size:10px;white-space:nowrap;color:#bad0e3}
-.chip.active{background:#1267a3;border-color:#41baff;color:white}
-.empty{padding:26px;text-align:center;color:#9cb4cb;font-size:12px}
-.result-list{display:grid;gap:7px;margin-top:12px;text-align:left}
-.result{display:flex;align-items:center;gap:10px;background:#0a1b2d;border:1px solid #204564;border-radius:12px;padding:9px}
-.result .face{font-size:27px}.result b{font-size:12px}.result small{display:block;color:#9bb3c9;font-size:10px}
-.battle-field{border:1px solid #326b8c;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#103b56,#0d4a3b 60%,#08352d);padding:12px;position:relative}
-.pitch{height:180px;border:2px solid #91d6b5aa;border-radius:5px;position:relative;background:repeating-linear-gradient(90deg,#ffffff08 0 35px,#00000008 35px 70px)}
-.pitch:before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1px solid #b8e8d6aa}
-.pitch:after{content:"";position:absolute;width:65px;height:65px;border:1px solid #b8e8d6aa;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
-.player-dot{position:absolute;font-size:19px;filter:drop-shadow(0 2px 3px #000);z-index:1}
-.ball{position:absolute;left:50%;top:50%;font-size:17px;z-index:2;transition:all .5s}
-.scoreline{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-weight:900}
-.scoreline strong{font-size:22px;color:#fff}
-.log{height:112px;overflow:auto;background:#061525;border-radius:10px;padding:9px;font-size:10px;color:#b5cce0;line-height:1.7;margin-top:10px}
-.team-row{display:flex;gap:8px;align-items:center;border-bottom:1px solid #1a3a57;padding:9px 0}
-.team-row:last-child{border:0}.team-row .num{font-size:10px;color:#7fdcff;width:24px}.team-row b{font-size:12px;flex:1}.team-row small{color:#9cb4cb;font-size:10px}
-.modal{position:fixed;inset:0;background:#020812d9;z-index:10;display:none;align-items:center;justify-content:center;padding:20px}
-.modal.show{display:flex}.modal-card{width:100%;max-width:430px;background:#0d2340;border:1px solid #39719c;border-radius:19px;padding:18px;text-align:center;max-height:85vh;overflow:auto}
-.modal-card h2{margin:7px 0}.modal-card p{font-size:12px;color:#b2cbe0;line-height:1.5}
-.big-face{font-size:68px;margin:8px}
-.toast{position:fixed;top:calc(12px + env(safe-area-inset-top));left:50%;transform:translate(-50%,-15px);opacity:0;transition:.25s;background:#d9f5ff;color:#06203a;padding:10px 15px;border-radius:999px;font-size:11px;font-weight:900;z-index:20;pointer-events:none}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.muted{color:var(--muted)}.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}
-footer{text-align:center;color:#68849e;font-size:9px;padding:12px}
-@media(min-width:600px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{min-height:175px}.hero h2{font-size:30px}.pitch{height:250px}}
+:root{--bg:#06101d;--panel:#0d1b2b;--cyan:#27d9ff;--blue:#1677ff;--gold:#ffc857;--white:#f4f8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#122c49,#050a12 70%);color:var(--white);font-family:Inter,system-ui,Arial;min-height:100vh}
+header{padding:15px 16px 10px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #29415b;background:#06101de8;position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
+.logo{font-weight:1000;letter-spacing:1.2px;font-size:15px}.logo span{color:var(--cyan)}.wallet{font-size:12px;background:#10243a;border:1px solid #2c5675;padding:8px 11px;border-radius:20px;color:#9deeff}
+nav{display:flex;gap:7px;padding:10px;overflow:auto;background:#071321;position:sticky;top:55px;z-index:4}
+nav button,.btn{border:1px solid #254765;background:#10243a;color:#dff8ff;border-radius:12px;padding:10px 13px;font-weight:800;white-space:nowrap}
+nav button.active,.btn.primary{background:linear-gradient(120deg,#087bba,#174de0);border-color:#35dfff;box-shadow:0 0 18px #087bba55}
+main{max-width:1000px;margin:auto;padding:12px}.screen{display:none}.screen.active{display:block}
+.panel{background:linear-gradient(145deg,#102239,#091522);border:1px solid #25445e;border-radius:17px;padding:14px;margin-bottom:13px;box-shadow:0 10px 30px #0005}
+h2{font-size:19px;margin:2px 0 10px}p.sub{color:#9eb6ca;font-size:12px;margin:0 0 12px}
+#stage{width:100%;height:290px;border-radius:15px;overflow:hidden;background:radial-gradient(#1b4262,#07111c);position:relative}
+#stage canvas{display:block;width:100%;height:100%}.stage-label{position:absolute;left:12px;top:10px;font-size:10px;letter-spacing:2px;color:#9eefff;text-shadow:0 2px 8px #000}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.actions .btn{flex:1}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#0a1725;border-radius:12px;padding:10px;text-align:center}.stat b{display:block;color:var(--cyan);font-size:19px}.stat small{color:#91a9bd}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.char{background:linear-gradient(145deg,#152d46,#091522);border:1px solid #2a4a68;border-radius:14px;padding:10px;min-width:0}
+.portrait{height:110px;border-radius:10px;background:radial-gradient(circle at 50% 30%,#2777a6,#102039 65%,#070e18);display:grid;place-items:center;font-size:48px;position:relative;overflow:hidden}
+.portrait:after{content:"";position:absolute;width:100px;height:160px;border:2px solid #5deaff55;transform:rotate(30deg);box-shadow:0 0 25px #22cfff66}
+.char b{display:block;margin-top:8px}.rarity{font-size:10px;color:var(--gold);letter-spacing:1px}.char small{color:#a9bfd2}
+.gacha-light{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle,#42eaff88,transparent 60%);opacity:0}
+.gacha-light.go{animation:flash 1.8s ease-out}
+@keyframes flash{0%{opacity:0;transform:scale(.2)}30%{opacity:1;transform:scale(1.5)}100%{opacity:0;transform:scale(2.5)}}
+#reveal{display:none;text-align:center;padding:14px;border:1px solid #4bdfff;border-radius:14px;background:linear-gradient(130deg,#123f61,#151c48);margin-top:10px}
+#reveal.show{display:block;animation:pop .5s ease-out}@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+#reveal .big{font-size:54px}.battle-controls{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+.log{font-size:12px;color:#a9c1d5;line-height:1.6;max-height:120px;overflow:auto}
+footer{text-align:center;color:#66839c;font-size:10px;padding:20px}
+@media(min-width:700px){#stage{height:420px}.grid{grid-template-columns:repeat(4,1fr)}.portrait{height:150px}}
+
+.soundbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:9px 11px;background:#091725;border:1px solid #29445c;border-radius:11px;font-size:12px;color:#b8d4e8}
+.soundbar button{background:#12304a;color:#dff8ff;border:1px solid #2c6988;border-radius:9px;padding:7px 10px;font-weight:800}
+.voice-note{font-size:10px;color:#8ea9bf;margin-top:8px;line-height:1.45}
 </style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
 </head>
 <body>
-<div class="app">
-<header>
- <div class="brand"><small>PROJECT EGO // MOBILE EDITION</small><h1>BLUE LOCK: <span>INFINITE EGO</span></h1></div>
- <div class="pill">TOKEN ∞</div>
-</header>
-
+<header><div class="logo">BLUE LOCK <span>INFINITE EGO</span></div><div class="wallet">∞ EGO TOKENS</div></header>
+<nav>
+<button class="active" data-tab="home">HOME</button><button data-tab="gacha">GACHA</button><button data-tab="team">PLAYERS</button><button data-tab="battle">CINEMATIC MATCH</button>
+</nav>
 <main>
-<section id="home" class="page active">
- <div class="hero"><div class="eyebrow">AWAKEN YOUR EGO</div><h2>BUILD YOUR<br>ULTIMATE XI.</h2><p>Kumpulkan striker terbaik. Bentuk tim impianmu. Taklukkan setiap pertandingan.</p><div class="hero-mark">∞</div></div>
- <div class="stats">
-  <div class="stat"><small>PLAYER LEVEL</small><strong id="playerLevel">1</strong></div>
-  <div class="stat"><small>GACHA TOKEN</small><strong class="blue">∞</strong></div>
-  <div class="stat"><small>KOLEKSI</small><strong id="ownedCount">0</strong></div>
- </div>
- <div class="section"><div class="section-head"><h3>QUICK ACCESS</h3><span>CHOOSE YOUR PATH</span></div>
-  <div class="quick">
-   <button class="tile" onclick="showPage('gacha')"><span class="ico">✦</span><b>INFINITE GACHA</b><small>Summon pemain</small></button>
-   <button class="tile" onclick="showPage('collection')"><span class="ico">♟</span><b>CHARACTERS</b><small>Koleksi pemain</small></button>
-   <button class="tile" onclick="showPage('battle')"><span class="ico">⚽</span><b>AUTO BATTLE</b><small>Mulai pertandingan</small></button>
-  </div>
- </div>
- <div class="section"><div class="section-head"><h3>YOUR EGO SQUAD</h3><span id="squadCount">0 / 11 STARTERS</span></div><div id="homeSquad" class="panel"><div class="empty">Lakukan summon untuk membangun tim pertamamu.</div></div></div>
+<section id="home" class="screen active">
+<div class="panel"><div id="stage"><div class="stage-label">3D EGO ARENA • LIVE</div></div>
+<h2>Awaken Your Ego</h2><p class="sub">Bangun skuad striker dan buktikan ego terkuatmu.</p>
+<div class="stats"><div class="stat"><b id="ownedCount">0</b><small>PLAYERS</small></div><div class="stat"><b>∞</b><small>SUMMON TOKEN</small></div><div class="stat"><b id="power">0</b><small>TEAM POWER</small></div></div></div>
+<div class="panel"><h2>Quick Access</h2><div class="actions"><button class="btn primary" onclick="tab('gacha')">SUMMON PLAYER</button><button class="btn" onclick="tab('battle')">ENTER MATCH</button></div></div>
 </section>
-
-<section id="gacha" class="page">
- <div class="section-head" style="padding:8px 14px 0"><h3>✦ INFINITE SUMMON</h3><span>TOKEN: ∞</span></div>
- <div class="section">
-  <div class="gacha-stage"><div class="gacha-logo">EGO</div><h2>AWAKEN YOUR STRIKER</h2><p>Summon tanpa batas. Token tidak akan pernah berkurang.</p><div class="pill" style="display:inline-block">INFINITE GACHA TOKEN ∞</div></div>
-  <div class="gacha-actions">
-   <button class="btn" onclick="summon(1)">SINGLE SUMMON</button>
-   <button class="btn" onclick="summon(10)">10x SUMMON</button>
-   <button class="btn secondary" onclick="summon(100)">100x SUMMON</button>
-   <button class="btn gold" onclick="summon(1000)">1.000x SUMMON</button>
-  </div>
-  <div class="panel" style="margin:12px 0"><label class="muted" style="font-size:11px">CUSTOM SUMMON QUANTITY</label><div class="row" style="margin-top:8px"><input id="customQty" type="number" min="1" max="5000" value="50"><button class="btn" onclick="customSummon()">SUMMON</button></div><small class="muted">Maksimal 5.000 per batch untuk menjaga performa HP.</small></div>
-  <div class="panel"><div class="section-head"><h3>RARITY RATE</h3><span>DEMO CONFIG</span></div>
-   <div style="font-size:11px;line-height:2;color:#b9d0e5">EX <b style="float:right;color:#6ff4ff">1%</b><br>LR <b style="float:right;color:#b89bff">4%</b><br>UR <b style="float:right;color:#ff79a5">10%</b><br>SSR <b style="float:right;color:#f6d36c">20%</b><br>SR <b style="float:right">30%</b><br>R <b style="float:right">25%</b><br>N <b style="float:right">10%</b></div>
-  </div>
-  <div id="summonResults" class="panel" style="display:none"><div class="section-head"><h3>SUMMON RESULTS</h3><span id="resultCount"></span></div><div id="resultList" class="result-list"></div></div>
- </div>
+<section id="gacha" class="screen">
+<div class="panel"><h2>INFINITE EGO SUMMON</h2><p class="sub">Tarik pemain dengan animasi awakening. Token tidak akan habis.</p>
+<div id="stageG"><div id="stage" style="height:220px"><div class="stage-label">EGO SUMMON GATE</div><div class="gacha-light" id="light"></div></div></div>
+<div class="actions"><button class="btn primary" onclick="summon(1)">SUMMON ×1</button><button class="btn" onclick="summon(10)">SUMMON ×10</button></div><div class="soundbar"><span>🔊 Gacha SFX & Player Voice</span><button id="soundToggle" onclick="toggleSound()">SOUND: ON</button></div><div class="voice-note">Dialog Jepang orisinal dengan suara sintetis browser dan efek suara buatan. Bukan rekaman atau tiruan voice actor anime.</div>
+<div id="reveal"><div class="big" id="revealIcon">⚽</div><div class="rarity" id="revealRare">SSR AWAKENING</div><h2 id="revealName">PLAYER</h2><p id="revealInfo" class="sub"></p></div></div>
+<div class="panel"><h2>Summon History</h2><div class="log" id="gachaLog">Belum ada summon.</div></div>
 </section>
-
-<section id="collection" class="page">
- <div class="section-head" style="padding:8px 14px 0"><h3>♟ CHARACTER COLLECTION</h3><span id="collectionCount">0 OWNED</span></div>
- <div class="section">
-  <input id="searchChar" placeholder="Cari nama karakter..." oninput="renderCollection()" style="margin-bottom:10px">
-  <div class="filter-row" id="filters">
-   <button class="chip active" data-filter="ALL" onclick="setFilter('ALL',this)">ALL</button>
-   <button class="chip" data-filter="EX" onclick="setFilter('EX',this)">EX</button>
-   <button class="chip" data-filter="LR" onclick="setFilter('LR',this)">LR</button>
-   <button class="chip" data-filter="UR" onclick="setFilter('UR',this)">UR</button>
-   <button class="chip" data-filter="SSR" onclick="setFilter('SSR',this)">SSR</button>
-   <button class="chip" data-filter="SR" onclick="setFilter('SR',this)">SR</button>
-   <button class="chip" data-filter="R" onclick="setFilter('R',this)">R</button>
-   <button class="chip" data-filter="N" onclick="setFilter('N',this)">N</button>
-  </div>
-  <div id="characterGrid" class="cards"></div>
- </div>
-</section>
-
-<section id="team" class="page">
- <div class="section-head" style="padding:8px 14px 0"><h3>♜ FORMATION</h3><span>STARTING XI</span></div>
- <div class="section">
-  <div class="panel"><div class="row"><div><small class="muted">FORMATION</small><select id="formation" onchange="saveGame()"><option>4-3-3</option><option>4-4-2</option><option>4-2-3-1</option><option>3-5-2</option><option>3-4-3</option></select></div><div><small class="muted">TACTIC</small><select id="tactic" onchange="saveGame()"><option>Balanced</option><option>Offensive</option><option>Defensive</option><option>Counter Attack</option><option>High Press</option><option>Possession</option></select></div></div></div>
-  <div class="panel"><div class="section-head"><h3>YOUR STARTING XI</h3><span id="teamPower">POWER 0</span></div><div id="teamList"></div><p class="muted" style="font-size:10px">Pilih pemain dari koleksi untuk mengisi slot. Maksimal 11 pemain unik.</p></div>
-  <div class="panel"><h3 style="font-size:13px;margin-top:0">ADD PLAYER</h3><div id="availablePlayers" class="result-list"></div></div>
- </div>
-</section>
-
-<section id="battle" class="page">
- <div class="section-head" style="padding:8px 14px 0"><h3>⚽ AUTO BATTLE ARENA</h3><span>3D MATCH SIMULATION</span></div>
- <div class="section">
-  <div class="battle-field">
-   <div class="scoreline"><span>YOUR EGO XI</span><strong id="score">0 : 0</strong><span>RIVAL XI</span></div>
-   <div class="pitch" id="pitch">
-    <span class="player-dot" style="left:15%;top:20%">🔵</span><span class="player-dot" style="left:30%;top:42%">🔵</span><span class="player-dot" style="left:18%;top:72%">🔵</span>
-    <span class="player-dot" style="right:15%;top:20%">🔴</span><span class="player-dot" style="right:30%;top:42%">🔴</span><span class="player-dot" style="right:18%;top:72%">🔴</span>
-    <span class="ball" id="ball">⚽</span>
-   </div>
-   <div class="scoreline" style="font-size:10px;color:#c3e8d9"><span id="matchClock">READY</span><span id="matchStatus">READY TO PLAY</span></div>
-  </div>
-  <div class="row" style="margin:10px 0"><button class="btn" onclick="startBattle()">▶ START BATTLE</button><button class="btn secondary" onclick="stopBattle()">■ STOP</button></div>
-  <div class="row"><button class="chip" onclick="setSpeed(1)">1x SPEED</button><button class="chip" onclick="setSpeed(2)">2x SPEED</button><button class="chip" onclick="setSpeed(3)">3x SPEED</button></div>
-  <div class="panel" style="margin:12px 0"><div class="section-head"><h3>MATCH COMMENTARY</h3><span>LIVE SIMULATION</span></div><div id="battleLog" class="log">Susun timmu, lalu tekan START BATTLE. Hasil simulasi dipengaruhi kekuatan dan jumlah pemain dalam tim.</div></div>
-  <div class="panel"><div class="section-head"><h3>MATCH REWARDS</h3><span>AFTER MATCH</span></div><div id="rewards" class="muted" style="font-size:11px">Selesaikan pertandingan untuk memperoleh EXP dan Gold.</div></div>
- </div>
-</section>
-
-<section id="profile" class="page">
- <div class="section-head" style="padding:8px 14px 0"><h3>⚙ PLAYER PROFILE</h3></div>
- <div class="panel"><div style="font-size:38px">👑</div><h2 style="margin:5px 0">EGO MANAGER</h2><p class="muted" style="font-size:11px">Level <b id="profileLevel">1</b> • XP <b id="profileXP">0</b></p><div class="stat"><small>GOLD</small><strong id="gold">1000</strong></div><div class="stat" style="margin-top:8px"><small>GACHA TOKEN</small><strong class="blue">∞ UNLIMITED</strong></div></div>
- <div class="panel"><h3 style="font-size:13px">SAVE DATA</h3><p class="muted" style="font-size:11px">Progres tersimpan otomatis di browser perangkat ini.</p><div class="row"><button class="btn secondary" onclick="exportSave()">EXPORT SAVE</button><button class="btn secondary" onclick="document.getElementById('importFile').click()">IMPORT SAVE</button></div><input id="importFile" type="file" accept="application/json" style="display:none" onchange="importSave(event)"><button class="btn secondary" style="width:100%;margin-top:9px" onclick="resetGame()">RESET GAME DATA</button></div>
- <footer>BLUE LOCK: INFINITE EGO RPG • FAN-MADE DEMO<br>Karakter dan nama berasal dari karya BLUE LOCK. Prototype ini tidak resmi dan tidak berafiliasi dengan pemegang hak cipta.</footer>
+<section id="team" class="screen"><div class="panel"><h2>PLAYER COLLECTION</h2><p class="sub">Pilih dan kumpulkan striker untuk skuadmu.</p><div class="grid" id="collection"></div><div class="detail-box" id="playerDetail"><div class="detail-art">⚡</div><div><b>Pilih pemain</b><p class="sub">Lihat statistik dan dengarkan voice line karakter.</p></div></div></div></section>
+<section id="battle" class="screen">
+<div class="panel"><h2>ANIME CINEMATIC MATCH</h2><p class="sub">Demo pertandingan 3D dengan pergerakan pemain, kamera dinamis, dan Ego Shot.</p>
+<div id="battleStage" style="height:300px;border-radius:14px;overflow:hidden;background:#06111e;position:relative"><div class="stage-label">BLUE LOCK STADIUM • MATCH DAY</div></div>
+<div class="battle-controls"><button class="btn" onclick="matchAction('PASS')">⚡ PASS</button><button class="btn" onclick="matchAction('DRIBBLE')">〽 DRIBBLE</button><button class="btn primary" onclick="matchAction('EGO SHOT')">🔥 EGO SHOT</button><button class="btn" onclick="matchAction('TACKLE')">🛡 TACKLE</button></div>
+<div class="actions"><button class="btn" onclick="autoMatch()">AUTO PLAY: <span id="autoText">OFF</span></button><button class="btn" onclick="resetMatch()">RESET MATCH</button></div><div class="soundbar"><span>🎙️ Player callouts & match SFX</span><button onclick="toggleSound()">SOUND: <span id="soundLabel">ON</span></button></div><div id="voiceText" style="font-size:12px;color:#c5efff;margin-top:8px">Pilih aksi untuk mendengar callout pemain.</div><div class="log" id="matchLog">Kick off! Pilih aksi untuk memulai pertandingan.</div></div>
 </section>
 </main>
+<footer>Fan-made browser prototype • GitHub Pages • Three.js via CDN • Bukan produk resmi</footer>
+<script type="module">
 
-<nav class="nav">
- <button class="active" data-page="home" onclick="showPage('home')"><span>⌂</span>HOME</button>
- <button data-page="gacha" onclick="showPage('gacha')"><span>✦</span>GACHA</button>
- <button data-page="collection" onclick="showPage('collection')"><span>♟</span>PLAYERS</button>
- <button data-page="team" onclick="showPage('team')"><span>♜</span>TEAM</button>
- <button data-page="battle" onclick="showPage('battle')"><span>⚽</span>BATTLE</button>
-</nav>
-</div>
-<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modal-card" id="modalContent"></div></div>
-<div id="toast" class="toast"></div>
-<script>
-const DB=[
-{id:'isagi',name:'Isagi Yoichi',team:'Blue Lock / Bastard München',pos:'FW',rarity:'UR',emoji:'⚡',stats:[92,85,88,86,60,78,98,96],skill:'Direct Shot',ultimate:'Meta Vision',desc:'Striker dengan kemampuan membaca ruang dan situasi permainan.'},
-{id:'rin',name:'Itoshi Rin',team:'Blue Lock / Paris X Gen',pos:'FW',rarity:'LR',emoji:'❄️',stats:[98,94,91,92,78,91,97,99],skill:'精准 Shooting',ultimate:'Destroyer Mode',desc:'Penyerang dengan teknik dan kemampuan adaptasi luar biasa.'},
-{id:'sae',name:'Itoshi Sae',team:'Japan U-20 / Real Madrid',pos:'MF',rarity:'EX',emoji:'💠',stats:[88,97,99,94,75,82,99,96],skill:'Elastic Dribbling',ultimate:'World-Class Pass',desc:'Gelandang kreatif dengan visi dan teknik kelas dunia.'},
-{id:'nagi',name:'Nagi Seishiro',team:'Blue Lock / Manshine City',pos:'FW',rarity:'UR',emoji:'🪽',stats:[93,98,82,79,55,90,91,92],skill:'Trapping',ultimate:'Five-Shot Revolver',desc:'Jenius dengan kontrol bola dan trapping yang istimewa.'},
-{id:'bachira',name:'Bachira Meguru',team:'Blue Lock / FC Barcha',pos:'FW',rarity:'SSR',emoji:'🐝',stats:[84,99,86,95,52,75,91,90],skill:'Monster Dribble',ultimate:'Ginga Dribble',desc:'Dribbler kreatif dengan gaya bermain tidak terduga.'},
-{id:'barou',name:'Barou Shoei',team:'Blue Lock / Ubers',pos:'FW',rarity:'UR',emoji:'👑',stats:[99,88,70,84,63,96,86,98],skill:'Predator Eye',ultimate:'King Shot',desc:'Striker egois yang mengincar posisi terbaik untuk mencetak gol.'},
-{id:'chigiri',name:'Chigiri Hyoma',team:'Blue Lock / Manshine City',pos:'FW',rarity:'SSR',emoji:'🌪️',stats:[86,90,77,99,55,80,85,88],skill:'Speed Dribble',ultimate:'44 Panther Snipe',desc:'Pemain dengan kecepatan eksplosif.'},
-{id:'kunigami',name:'Kunigami Rensuke',team:'Blue Lock / Bastard München',pos:'FW',rarity:'SSR',emoji:'🔥',stats:[94,76,67,78,74,98,73,91],skill:'Power Shot',ultimate:'Lefty Shot',desc:'Striker dengan kekuatan fisik dan tembakan keras.'},
-{id:'reo',name:'Reo Mikage',team:'Blue Lock / Manshine City',pos:'MF',rarity:'SSR',emoji:'🟣',stats:[83,87,92,84,78,82,91,87],skill:'Copy',ultimate:'Chameleon',desc:'Pemain serbabisa dengan kemampuan meniru teknik.'},
-{id:'shidou',name:'Shidou Ryusei',team:'Blue Lock / Paris X Gen',pos:'FW',rarity:'LR',emoji:'💥',stats:[99,91,73,92,57,95,89,100],skill:'Explosive Instinct',ultimate:'Big Bang Drive',desc:'Striker dengan insting mencetak gol yang ekstrem.'},
-{id:'hiori',name:'Hiori Yo',team:'Blue Lock / Bastard München',pos:'MF',rarity:'SR',emoji:'🎯',stats:[76,87,96,83,62,70,94,82],skill:'Precision Pass',ultimate:'Perfect Synchronization',desc:'Playmaker dengan operan presisi dan visi lapangan.'},
-{id:'karasu',name:'Karasu Tabito',team:'Blue Lock / Paris X Gen',pos:'MF',rarity:'SR',emoji:'🖤',stats:[78,86,90,82,83,85,91,84],skill:'Ball Keep',ultimate:'Feather Touch',desc:'Pemain analitis yang mengeksploitasi kelemahan lawan.'},
-{id:'otoya',name:'Otoya Eita',team:'Blue Lock / FC Barcha',pos:'FW',rarity:'SR',emoji:'🦎',stats:[82,90,78,94,53,76,82,83],skill:'Ninja Run',ultimate:'Blind Spot',desc:'Penyerang yang bergerak melalui blind spot lawan.'},
-{id:'yukimiya',name:'Yukimiya Kenyu',team:'Blue Lock / Bastard München',pos:'FW',rarity:'SR',emoji:'🕶️',stats:[88,95,75,91,50,84,86,87],skill:'Gyro Shot',ultimate:'Sword Screw',desc:'Dribbler dengan teknik dan tembakan berputar.'},
-{id:'gagamaru',name:'Gagamaru Gin',team:'Blue Lock / Japan U-20',pos:'GK',rarity:'SSR',emoji:'🧤',stats:[65,70,68,91,95,96,84,82],skill:'Beast Reflex',ultimate:'Wild Save',desc:'Kiper dengan refleks dan jangkauan luar biasa.'},
-{id:'aiku',name:'Aiku Oliver',team:'Japan U-20 / Ubers',pos:'DF',rarity:'UR',emoji:'🛡️',stats:[72,78,80,82,98,94,91,85],skill:'Defensive Reading',ultimate:'Iron Wall',desc:'Bek dengan kemampuan membaca serangan lawan.'},
-{id:'kaiser',name:'Michael Kaiser',team:'Bastard München',pos:'FW',rarity:'EX',emoji:'🌹',stats:[100,94,91,93,55,89,98,100],skill:'Kaiser Impact',ultimate:'Kaiser Impact: Magnus',desc:'Striker elit dengan tembakan yang sangat cepat.'},
-{id:'ness',name:'Alexis Ness',team:'Bastard München',pos:'MF',rarity:'UR',emoji:'🪄',stats:[76,90,98,84,57,72,94,86],skill:'Magical Pass',ultimate:'Kaiser Link',desc:'Playmaker dengan kontrol dan operan kreatif.'},
-{id:'lorenzo',name:'Don Lorenzo',team:'Ubers',pos:'DF',rarity:'LR',emoji:'🪙',stats:[73,90,86,88,99,97,95,91],skill:'Zombie Dribble',ultimate:'Ace Eater',desc:'Bek dengan kemampuan marking dan dribble unik.'},
-{id:'aryu',name:'Aryu Jyubei',team:'Blue Lock / U-20',pos:'DF',rarity:'R',emoji:'✨',stats:[65,74,68,78,88,87,72,75],skill:'Long Reach',ultimate:'Stylish Block',desc:'Bek dengan jangkauan tubuh yang panjang.'}
-];
-const RATE=[['EX',1],['LR',4],['UR',10],['SSR',20],['SR',30],['R',25],['N',10]];
-let state={level:1,xp:0,gold:1000,owned:{},team:[],formation:'4-3-3',tactic:'Balanced',history:[],wins:0};
-let activeFilter='ALL',battleTimer=null,battleSpeed=1;
-function loadGame(){try{const x=JSON.parse(localStorage.getItem('bluelock_ego_save'));if(x)state={...state,...x}}catch(e){}}
-function saveGame(){state.formation=document.getElementById('formation')?.value||state.formation;state.tactic=document.getElementById('tactic')?.value||state.tactic;try{localStorage.setItem('bluelock_ego_save',JSON.stringify(state))}catch(e){}updateUI()}
-function rarityClass(r){return 'r'+r}
-function getOwned(){return DB.filter(c=>(state.owned[c.id]||0)>0)}
-function ownedCount(){return Object.values(state.owned).reduce((a,b)=>a+b,0)}
-function pickRarity(){let n=Math.random()*100;for(const [r,p] of RATE){n-=p;if(n<0)return r}return 'N'}
-function pickCharacter(r){let pool=DB.filter(c=>c.rarity===r);if(!pool.length)pool=DB.filter(c=>c.rarity==='SR'||c.rarity==='R');return pool[Math.floor(Math.random()*pool.length)]}
-function summon(n){
- n=Math.max(1,Math.min(5000,Math.floor(n)));let counts={},results=[];
- for(let i=0;i<n;i++){let r=pickRarity(),c=pickCharacter(r);state.owned[c.id]=(state.owned[c.id]||0)+1;counts[r]=(counts[r]||0)+1;if(results.length<30)results.push(c);state.history.unshift({id:c.id,r,time:Date.now()})}
- state.xp+=n*2;state.gold+=n*5;levelUp();saveGame();showPage('gacha');
- const wrap=document.getElementById('summonResults');wrap.style.display='block';document.getElementById('resultCount').textContent=n.toLocaleString('id-ID')+' SUMMONS';
- document.getElementById('resultList').innerHTML=results.map(c=>`<div class="result"><div class="face">${c.emoji}</div><div style="flex:1"><b>${c.name}</b><small>${c.team}</small></div><strong class="${rarityClass(c.rarity)}">${c.rarity}</strong></div>`).join('')+(n>30?`<div class="muted" style="font-size:10px;text-align:center">+ ${(n-30).toLocaleString('id-ID')} hasil lainnya disimpan di koleksi.</div>`:'');
- toast(`${n} SUMMON SELESAI! TOKEN TETAP ∞`);renderCollection();renderTeam();renderHome();
+// Original browser-generated sound design and Japanese player callouts.
+// It does not use or imitate the anime's original recordings or voice actors.
+let soundEnabled = true;
+let audioCtx = null;
+function audio(){ if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)(); if(audioCtx.state==='suspended') audioCtx.resume(); return audioCtx; }
+function tone(freq, duration, type='sine', gain=.08, slide=0){
+  if(!soundEnabled) return;
+  try{const c=audio(),o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(freq,c.currentTime);if(slide)o.frequency.exponentialRampToValueAtTime(Math.max(30,freq+slide),c.currentTime+duration);g.gain.setValueAtTime(.0001,c.currentTime);g.gain.exponentialRampToValueAtTime(gain,c.currentTime+.025);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+duration);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+duration+.03)}catch(e){}
 }
-function customSummon(){let n=Number(document.getElementById('customQty').value)||1;summon(n)}
-function levelUp(){while(state.xp>=state.level*100){state.xp-=state.level*100;state.level++}}
-function showPage(id){stopBattle(false);document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='collection')renderCollection();if(id==='team')renderTeam();if(id==='home')renderHome();if(id==='profile')updateUI()}
-function setFilter(f,el){activeFilter=f;document.querySelectorAll('.chip[data-filter]').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderCollection()}
-function renderCollection(){let q=(document.getElementById('searchChar')?.value||'').toLowerCase();let arr=getOwned().filter(c=>(activeFilter==='ALL'||c.rarity===activeFilter)&&c.name.toLowerCase().includes(q));document.getElementById('collectionCount').textContent=ownedCount()+' OWNED';document.getElementById('characterGrid').innerHTML=arr.length?arr.map(c=>`<div class="char ${rarityClass(c.rarity)}" onclick="characterDetail('${c.id}')"><div class="rarity">${c.rarity} • ${c.pos}</div><div class="avatar">${c.emoji}</div><b>${c.name}</b><small>Lv. ${1+Math.floor((state.owned[c.id]||1)/2)} • ${c.team}</small><span class="power">×${state.owned[c.id]}</span></div>`).join(''):'<div class="empty" style="grid-column:1/-1">Belum ada karakter di filter ini. Pergi ke Gacha untuk summon!</div>'}
-function characterDetail(id){let c=DB.find(x=>x.id===id);let n=state.owned[id]||0;document.getElementById('modalContent').innerHTML=`<div class="big-face">${c.emoji}</div><div class="${rarityClass(c.rarity)}" style="font-weight:1000">${c.rarity} • ${c.pos}</div><h2>${c.name}</h2><p>${c.desc}</p><div class="panel" style="text-align:left;margin:10px 0"><b style="font-size:11px">STATISTIK</b>${['Shooting','Dribbling','Passing','Speed','Defense','Physical','Technique','Vision'].map((s,i)=>`<div style="display:flex;align-items:center;gap:8px;margin-top:8px;font-size:10px"><span style="width:75px">${s}</span><div style="height:6px;background:#19334c;border-radius:9px;flex:1"><div style="height:6px;width:${c.stats[i]}%;background:#25b7ff;border-radius:9px"></div></div><b>${c.stats[i]}</b></div>`).join('')}</div><p><b>Skill:</b> ${c.skill}<br><b>Ultimate:</b> ${c.ultimate}<br><b>Jumlah:</b> ${n}</p><button class="btn" onclick="addToTeam('${id}');closeModal()">ADD TO TEAM</button> <button class="btn secondary" onclick="closeModal()">CLOSE</button>`;openModal()}
-function addToTeam(id){if(!state.owned[id])return toast('Karakter belum dimiliki');if(state.team.includes(id))return toast('Karakter sudah ada di tim');if(state.team.length>=11)return toast('Tim sudah penuh');state.team.push(id);saveGame();renderTeam();toast('Pemain ditambahkan ke tim')}
-function removeTeam(id){state.team=state.team.filter(x=>x!==id);saveGame();renderTeam()}
-function renderTeam(){let list=document.getElementById('teamList');if(!list)return;list.innerHTML=Array.from({length:11},(_,i)=>{let c=DB.find(x=>x.id===state.team[i]);return `<div class="team-row"><span class="num">${String(i+1).padStart(2,'0')}</span>${c?`<span>${c.emoji}</span><b>${c.name}</b><small>${c.pos}</small><button class="chip" onclick="removeTeam('${c.id}')">REMOVE</button>`:`<span>＋</span><b class="muted">Empty Slot</b><small>--</small>`}</div>`}).join('');
- let power=state.team.reduce((a,id)=>{let c=DB.find(x=>x.id===id);return a+(c?c.stats.reduce((x,y)=>x+y,0):0)},0);document.getElementById('teamPower').textContent='POWER '+power;document.getElementById('availablePlayers').innerHTML=getOwned().filter(c=>!state.team.includes(c.id)).map(c=>`<div class="result"><span class="face">${c.emoji}</span><div style="flex:1"><b>${c.name}</b><small>${c.rarity} • ${c.pos}</small></div><button class="chip" onclick="addToTeam('${c.id}')">ADD</button></div>`).join('')||'<div class="empty">Tidak ada pemain lain. Lakukan summon untuk menambah koleksi.</div>';document.getElementById('formation').value=state.formation;document.getElementById('tactic').value=state.tactic}
-function renderHome(){document.getElementById('homeSquad').innerHTML=state.team.length?state.team.slice(0,5).map(id=>{let c=DB.find(x=>x.id===id);return `<div class="team-row"><span>${c.emoji}</span><b>${c.name}</b><small>${c.rarity}</small></div>`}).join(''):'<div class="empty">Lakukan summon untuk membangun tim pertamamu.</div>';document.getElementById('squadCount').textContent=state.team.length+' / 11 STARTERS'}
-function updateUI(){document.getElementById('playerLevel').textContent=state.level;document.getElementById('ownedCount').textContent=ownedCount();document.getElementById('profileLevel').textContent=state.level;document.getElementById('profileXP').textContent=state.xp;document.getElementById('gold').textContent=state.gold.toLocaleString('id-ID');}
-function startBattle(){if(battleTimer)return;if(!state.team.length){toast('Tambahkan pemain ke tim terlebih dahulu');showPage('team');return}let log=document.getElementById('battleLog');log.innerHTML='Kick-off! Tim kamu memasuki lapangan.<br>';let my=state.team.reduce((a,id)=>{let c=DB.find(x=>x.id===id);return a+(c?c.stats.reduce((x,y)=>x+y,0)/8:0)},0)/state.team.length;let opp=72+Math.random()*18;let a=0,b=0,t=0;document.getElementById('score').textContent='0 : 0';document.getElementById('rewards').textContent='Pertandingan sedang berlangsung...';document.getElementById('matchStatus').textContent='LIVE';const lines=['Menguasai bola di lini tengah.','Operan terobosan berhasil!','Peluang emas tercipta!','Pertahanan lawan memotong serangan.','Serangan balik cepat!','Tembakan keras dilepaskan!','Kiper melakukan penyelamatan!','Kombinasi skill membuka ruang!'];battleTimer=setInterval(()=>{t++;document.getElementById('matchClock').textContent=Math.min(90,t*5)+' MIN';let event=lines[Math.floor(Math.random()*lines.length)];if(Math.random()<(my/(my+opp))*.22){a++;event='GOOOOL! '+(DB.find(x=>x.id===state.team[Math.floor(Math.random()*state.team.length)])?.name||'Striker')+' mencetak gol!'}else if(Math.random()<(opp/(my+opp))*.16){b++;event='Lawan mencetak gol melalui serangan cepat.'}log.innerHTML+=`${Math.min(90,t*5)}’ — ${event}<br>`;log.scrollTop=log.scrollHeight;document.getElementById('score').textContent=a+' : '+b;let ball=document.getElementById('ball');ball.style.left=(20+Math.random()*60)+'%';ball.style.top=(20+Math.random()*60)+'%';if(t>=18){stopBattle(false);state.xp+=40+a*10;state.gold+=100+a*50;if(a>=b)state.wins++;levelUp();saveGame();document.getElementById('matchStatus').textContent='FULL TIME';document.getElementById('rewards').innerHTML=`<b style="color:#70e5ff">MATCH COMPLETE</b><br>Hasil: ${a} - ${b}<br>+${40+a*10} EXP • +${100+a*50} Gold`;log.innerHTML+='<b>FULL TIME! Pertandingan selesai.</b>';toast('Pertandingan selesai! Reward diterima')}} ,900/battleSpeed)}
-function stopBattle(show=true){if(battleTimer){clearInterval(battleTimer);battleTimer=null;if(show){document.getElementById('matchStatus').textContent='STOPPED';toast('Battle dihentikan')}}}
-function setSpeed(s){battleSpeed=s;if(battleTimer){stopBattle(false);toast('Kecepatan diubah. Mulai ulang battle.')}else toast('Kecepatan battle: '+s+'x')}
-function openModal(){document.getElementById('modal').classList.add('show')}function closeModal(){document.getElementById('modal').classList.remove('show')}
-function toast(s){let e=document.getElementById('toast');e.textContent=s;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2100)}
-function exportSave(){let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='blue-lock-ego-save.json';a.click();URL.revokeObjectURL(a.href)}
-function importSave(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{state={...state,...JSON.parse(r.result)};saveGame();renderCollection();renderTeam();toast('Save berhasil diimpor')}catch(err){toast('File save tidak valid')}};r.readAsText(f)}
-function resetGame(){if(confirm('Hapus seluruh progres game?')){localStorage.removeItem('bluelock_ego_save');state={level:1,xp:0,gold:1000,owned:{},team:[],formation:'4-3-3',tactic:'Balanced',history:[],wins:0};saveGame();renderCollection();renderTeam();renderHome();toast('Game direset')}}
-loadGame();updateUI();renderHome();renderCollection();renderTeam();
-if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+function noise(duration=.35,gain=.07,filter=1200){
+  if(!soundEnabled)return;
+  try{const c=audio(),n=Math.floor(c.sampleRate*duration),b=c.createBuffer(1,n,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*(1-i/n);const s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=b;f.type='lowpass';f.frequency.value=filter;g.gain.value=gain;s.connect(f);f.connect(g);g.connect(c.destination);s.start()}catch(e){}
+}
+function sfx(kind){
+ if(!soundEnabled)return;
+ if(kind==='summon'){tone(180,.7,'sawtooth',.055,950);noise(.6,.09,1900);setTimeout(()=>tone(520,.35,'triangle',.07,700),350)}
+ if(kind==='reveal'){tone(440,.25,'triangle',.08,440);setTimeout(()=>tone(880,.55,'sine',.09,500),110);setTimeout(()=>tone(1320,.65,'sine',.07,250),220)}
+ if(kind==='rare'){tone(110,.65,'sawtooth',.1,-55);noise(.5,.12,700);setTimeout(()=>tone(660,.7,'triangle',.1,700),180)}
+ if(kind==='pass'){tone(380,.12,'triangle',.045,170)}
+ if(kind==='dribble'){tone(250,.12,'square',.035,240);setTimeout(()=>tone(420,.12,'square',.035,-100),100)}
+ if(kind==='shot'){noise(.28,.16,900);tone(95,.55,'sawtooth',.12,700);setTimeout(()=>tone(720,.3,'triangle',.07,500),160)}
+ if(kind==='tackle'){noise(.2,.13,500);tone(130,.22,'square',.06,-60)}
+}
+const playerVoices={
+ 'Yoichi Isagi':{line:'Koko da! Ore ga kimeru!',pitch:1.12,rate:1.03},
+ 'Meguru Bachira':{line:'Tanoshimou yo! Monster time!',pitch:1.25,rate:1.12},
+ 'Rin Itoshi':{line:'Jama da. Subete ore ga kowasu.',pitch:.82,rate:.91},
+ 'Seishiro Nagi':{line:'Mendokusai kedo... kimeru yo.',pitch:.92,rate:.88},
+ 'Hyoma Chigiri':{line:'Oitsukeru mono nara oitsuite miro!',pitch:1.2,rate:1.08},
+ 'Shoei Barou':{line:'Ore ga ou da! Hizamazuke!',pitch:.78,rate:.95},
+ 'Rensuke Kunigami':{line:'正々堂々、勝負だ! Ore wa makenai!',pitch:.94,rate:1.0},
+ 'Reo Mikage':{line:'Kore ga ore no saikou no play da!',pitch:1.03,rate:1.02}
+};
+function speakPlayer(p){
+ if(!soundEnabled || !('speechSynthesis' in window))return;
+ const v=playerVoices[p.name]; if(!v)return;
+ try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(v.line);u.lang='ja-JP';u.rate=v.rate;u.pitch=v.pitch;u.volume=.95;const voices=speechSynthesis.getVoices();const jp=voices.find(x=>x.lang&&x.lang.toLowerCase().startsWith('ja'));if(jp)u.voice=jp;speechSynthesis.speak(u)}catch(e){}
+}
+function toggleSound(){soundEnabled=!soundEnabled;document.querySelectorAll('#soundToggle').forEach(b=>b.textContent='SOUND: '+(soundEnabled?'ON':'OFF'));const l=document.getElementById('soundLabel');if(l)l.textContent=soundEnabled?'ON':'OFF';if(!soundEnabled&&'speechSynthesis'in window)speechSynthesis.cancel()}
+window.toggleSound=toggleSound;
+
+
+const voicePack={
+ 'Yoichi Isagi':{summon:'Ore wa sekai ichi no striker ni naru!',skill:'Koko da! Direct Shot!',win:'Yatta... ore no ego ga katta!'},
+ 'Meguru Bachira':{summon:'Issho ni asobou yo! Monster!',skill:'Monster! Dribble de nukeru!',win:'Ahaa! Saikou ni tanoshii ne!'},
+ 'Rin Itoshi':{summon:'Ore no jama o suru na.',skill:'Kiete ro. Devour shot!',win:'Kono teido de ore ni katta tsumori ka?'},
+ 'Seishiro Nagi':{summon:'Mendokusai... demo omoshiroi.',skill:'Kore ga tensai no trapping da.',win:'Maa... warukunai ne.'},
+ 'Hyoma Chigiri':{summon:'Kaze yori hayaku hashiru!',skill:'Oitekuru nara oitekite miro!',win:'Watashi no speed ni tsuite koreta?'},
+ 'Shoei Barou':{summon:'Ore ga king da!',skill:'Hizamazuke! King shot!',win:'Ore igai wa subete mob da!'},
+ 'Rensuke Kunigami':{summon:'Hero wa zettai ni makenai!',skill:'Kore ga ore no power shot da!',win:'Shoujiki ni tatakatta kekka da!'},
+ 'Reo Mikage':{summon:'Subete no play o copy suru.',skill:'Kore ga ore no saikou no copy da!',win:'Kore mo keikaku doori da!'}
+};
+function speakLine(p,kind='summon'){
+ if(!soundEnabled||!('speechSynthesis'in window))return;
+ const line=(voicePack[p.name]||voicePack['Yoichi Isagi'])[kind]||'Ikuzo!';
+ try{
+  speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(line);u.lang='ja-JP';
+  const v=playerVoices[p.name]||{pitch:1,rate:1};u.pitch=v.pitch;u.rate=v.rate;u.volume=1;
+  const jp=speechSynthesis.getVoices().find(x=>x.lang&&x.lang.toLowerCase().startsWith('ja'));if(jp)u.voice=jp;
+  speechSynthesis.speak(u);
+ }catch(e){}
+}
+
+import * as THREE from 'three';
+const players=[
+{name:'Yoichi Isagi',rarity:'SSR',icon:'⚡',power:94,skill:'Direct Shot',color:0x168bdb},
+{name:'Meguru Bachira',rarity:'SSR',icon:'🐝',power:92,skill:'Monster Dribble',color:0xffc52d},
+{name:'Rin Itoshi',rarity:'UR',icon:'❄️',power:99,skill:'Devour Shot',color:0x31b9dc},
+{name:'Seishiro Nagi',rarity:'SSR',icon:'💠',power:95,skill:'Trapping',color:0xe7e7f2},
+{name:'Hyoma Chigiri',rarity:'SR',icon:'🔥',power:88,skill:'Golden Speed',color:0xe84b75},
+{name:'Shoei Barou',rarity:'SSR',icon:'👑',power:96,skill:'King Shot',color:0xb52b34},
+{name:'Rensuke Kunigami',rarity:'SR',icon:'💪',power:87,skill:'Power Shot',color:0xef7434},
+{name:'Reo Mikage',rarity:'SR',icon:'💜',power:89,skill:'Copy',color:0x995bd4}
+];
+let owned=[0,1,2], selected=0, auto=false, score=0, sceneRefs=[];
+const save=()=>{try{localStorage.setItem('blego_owned',JSON.stringify(owned))}catch(e){}};
+try{const s=JSON.parse(localStorage.getItem('blego_owned')||'null');if(Array.isArray(s)&&s.length)owned=s}catch(e){}
+function tab(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));if(id==='team')renderCollection();if(id==='battle')setTimeout(()=>battleWorld.resize(),50)}
+window.tab=tab;
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+function makeWorld(el,stadium=false){
+const w=el.clientWidth||360,h=el.clientHeight||280;
+const scene=new THREE.Scene();scene.background=new THREE.Color(stadium?0x071523:0x08182b);scene.fog=new THREE.Fog(0x071523,18,45);
+const camera=new THREE.PerspectiveCamera(45,w/h,.1,100);camera.position.set(0,stadium?8:5,stadium?15:12);camera.lookAt(0,1,0);
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(w,h);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;el.appendChild(renderer.domElement);
+scene.add(new THREE.HemisphereLight(0x9edfff,0x17243b,2));
+const key=new THREE.DirectionalLight(0xffffff,2.2);key.position.set(-5,10,7);key.castShadow=true;scene.add(key);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(28,38),new THREE.MeshStandardMaterial({color:stadium?0x176b4d:0x0b263e,roughness:.9}));floor.rotation.x=-Math.PI/2;floor.position.y=-.04;floor.receiveShadow=true;scene.add(floor);
+if(stadium){const lineMat=new THREE.MeshBasicMaterial({color:0xb5ffe1});function line(x,z,sx,sz){let m=new THREE.Mesh(new THREE.BoxGeometry(sx,.018,sz),lineMat);m.position.set(x,.01,z);scene.add(m)}line(0,0,18,.045);line(0,-9,18,.045);line(0,9,18,.045);line(-9,0,.045,18);line(9,0,.045,18);let ring=new THREE.Mesh(new THREE.TorusGeometry(2.2,.025,8,64),lineMat);ring.rotation.x=Math.PI/2;ring.position.y=.02;scene.add(ring);}
+const group=new THREE.Group();scene.add(group);
+function player(x,z,color,scale=1){const g=new THREE.Group();g.position.set(x,0,z);const mat=new THREE.MeshStandardMaterial({color,roughness:.45,metalness:.08});const skin=new THREE.MeshStandardMaterial({color:0xffc69e});const torso=new THREE.Mesh(new THREE.CapsuleGeometry(.34,.68,4,8),mat);torso.position.y=1.05;g.add(torso);const head=new THREE.Mesh(new THREE.SphereGeometry(.25,12,10),skin);head.position.y=1.72;g.add(head);const hair=new THREE.Mesh(new THREE.SphereGeometry(.26,10,8),new THREE.MeshStandardMaterial({color:0x111827}));hair.scale.set(1,.55,1);hair.position.set(0,1.91,0);g.add(hair);for(let side of [-1,1]){let leg=new THREE.Mesh(new THREE.CapsuleGeometry(.105,.52,3,6),new THREE.MeshStandardMaterial({color:0x101827}));leg.position.set(side*.14,.35,0);g.add(leg);let arm=new THREE.Mesh(new THREE.CapsuleGeometry(.09,.45,3,6),mat);arm.position.set(side*.42,1.12,0);arm.rotation.z=side*.2;g.add(arm)}g.scale.setScalar(scale);g.castShadow=true;group.add(g);return g}
+if(stadium){for(let i=0;i<5;i++){player(-6+i*2.5,-3-i%2, i%2?0x1b6dce:0xe54a5b,.8);player(-6+i*2.5,4+i%2,i%2?0xe54a5b:0x1b6dce,.8)}}else{player(-2,0,0x168bdb,1.25);player(2,0,0xe54a5b,1.25);player(0,-3,0x1c9bdf,1)}
+const ball=new THREE.Mesh(new THREE.SphereGeometry(.22,20,16),new THREE.MeshStandardMaterial({color:0xffffff,roughness:.35}));ball.position.set(0,.25,1);ball.castShadow=true;scene.add(ball);
+const particles=new THREE.Group();scene.add(particles);
+for(let i=0;i<35;i++){let p=new THREE.Mesh(new THREE.SphereGeometry(.035,6,6),new THREE.MeshBasicMaterial({color: i%2?0x29dfff:0xffd35a}));p.position.set((Math.random()-.5)*12,Math.random()*5-1,(Math.random()-.5)*14);particles.add(p)}
+let clock=new THREE.Clock(),shot=0,raf;
+function animate(){raf=requestAnimationFrame(animate);let t=clock.getElapsedTime();group.children.forEach((p,i)=>{p.position.x+=Math.sin(t*.8+i)*.0008;p.rotation.y=Math.sin(t+i)*.06});ball.position.x=Math.sin(t*.9)*.7;ball.position.z=1+Math.cos(t*.6)*.5;particles.rotation.y=t*.07;camera.position.x=Math.sin(t*.18)*.5;camera.lookAt(0,1,0);renderer.render(scene,camera)}
+animate();
+return {scene,camera,renderer,ball,group,particles,resize(){let nw=el.clientWidth,nh=el.clientHeight;if(nw&&nh){camera.aspect=nw/nh;camera.updateProjectionMatrix();renderer.setSize(nw,nh)}},action(type){shot++;let target=type==='EGO SHOT';let start=performance.now();const from=ball.position.clone();const duration=target?1200:650;function move(now){let p=Math.min(1,(now-start)/duration);ball.position.x=from.x+Math.sin(p*Math.PI)* (target?3:1.3);ball.position.z=from.z-p*(target?9:3);ball.position.y=.22+Math.sin(p*Math.PI)*(target?3:1);if(p<1)requestAnimationFrame(move);else{ball.position.set(0,.25,1)}}move(start);camera.position.set(target?0:Math.sin(shot)*1.5,target?5:7,target?10:15);if(target){const flash=new THREE.PointLight(0x29dfff,18,12);flash.position.set(0,3,0);scene.add(flash);setTimeout(()=>scene.remove(flash),500)}}};
+}
+const homeWorld=makeWorld(document.getElementById('stage'),false);
+const battleWorld=makeWorld(document.getElementById('battleStage'),true);
+function renderCollection(){
+ let box=document.getElementById('collection');box.innerHTML='';
+ [...new Set(owned)].forEach(i=>{
+  let p=players[i],d=document.createElement('div');d.className='char';
+  d.innerHTML=`<div class="portrait">${p.icon}</div><span class="rarity">${p.rarity} • POWER ${p.power}</span><b>${p.name}</b><small>${p.skill}</small>`;
+  d.onclick=()=>{
+   selected=i;document.getElementById('power').textContent=p.power;
+   document.querySelectorAll('.char').forEach(x=>x.style.outline='none');d.style.outline='2px solid #42e6ff';
+   let detail=document.getElementById('playerDetail');
+   if(detail)detail.innerHTML=`<div class="detail-art">${p.icon}</div><div><span class="rarity">${p.rarity} • PLAYER PROFILE</span><h2 style="margin:4px 0">${p.name}</h2><p class="sub">${p.skill} • POWER ${p.power}</p><div class="detail-bars"><small>OFFENSE</small><div class="barline"><i style="width:${p.power}%"></i></div><small>EGO CONTROL</small><div class="barline"><i style="width:${Math.max(20,p.power-8)}%"></i></div></div><button class="btn" style="margin-top:8px" onclick="window.playSelectedVoice()">▶ PLAYER VOICE</button></div>`;
+   window.playSelectedVoice=()=>{sfx('reveal');speakLine(p,'summon')};
+  };
+  box.appendChild(d);
+ });
+ document.getElementById('ownedCount').textContent=new Set(owned).size;
+ document.getElementById('power').textContent=players[owned[0]||0].power;
+}
+function summon(n){sfx('summon');const light=document.getElementById('light');light.classList.remove('go');void light.offsetWidth;light.classList.add('go');let got=[];for(let i=0;i<n;i++){let r=Math.random(),idx=r<.04?2:r<.25?Math.floor(Math.random()*4):Math.floor(Math.random()*players.length);got.push(idx);owned.push(idx)}save();let p=players[got[got.length-1]];document.getElementById('reveal').classList.add('show');document.getElementById('revealIcon').textContent=p.icon;document.getElementById('revealRare').textContent=p.rarity+' • EGO AWAKENING';document.getElementById('revealName').textContent=p.name;document.getElementById('revealInfo').textContent=p.skill+' | POWER '+p.power+(n>1?' • '+n+' summon results':'');setTimeout(()=>{sfx(p.rarity==='UR'?'rare':'reveal');speakLine(p,'summon')},650);let log=got.map(i=>players[i].name+' ['+players[i].rarity+']').join(' • ');document.getElementById('gachaLog').innerHTML=log+'<br>'+document.getElementById('gachaLog').innerHTML;renderCollection()}
+window.summon=summon;
+function matchAction(type){battleWorld.action(type);sfx(type==='EGO SHOT'?'shot':type.toLowerCase());let activePlayer=players[selected]||players[0];if(type==='EGO SHOT'){speakLine(activePlayer,'skill');let vt=document.getElementById('voiceText');if(vt)vt.textContent=activePlayer.name+': '+voicePack[activePlayer.name].skill;}else{let vt=document.getElementById('voiceText');if(vt)vt.textContent=type==='PASS'?'Quick pass!':type==='DRIBBLE'?'Break through the defense!':'Ball recovered!';}let lines={'PASS':'Umpan tajam menembus lini tengah!','DRIBBLE':'Pemain melewati lawan dengan skill dribble!','EGO SHOT':'EGO AWAKENING! Tendangan spesial melesat ke gawang!','TACKLE':'Sliding tackle! Bola berhasil direbut!'};if(type==='EGO SHOT')score++;let log=document.getElementById('matchLog');log.innerHTML='['+type+'] '+lines[type]+'<br>'+log.innerHTML}
+window.matchAction=matchAction;function autoMatch(){auto=!auto;document.getElementById('autoText').textContent=auto?'ON':'OFF';if(auto)autoLoop()}window.autoMatch=autoMatch;function autoLoop(){if(!auto)return;matchAction(['PASS','DRIBBLE','EGO SHOT','TACKLE'][Math.floor(Math.random()*4)]);setTimeout(autoLoop,2200)}
+window.resetMatch=()=>{auto=false;document.getElementById('autoText').textContent='OFF';document.getElementById('matchLog').innerHTML='Kick off! Pilih aksi untuk memulai pertandingan.';document.getElementById('voiceText')&&(document.getElementById('voiceText').textContent='Pilih aksi untuk mendengar callout pemain.');score=0};
+renderCollection();
+window.addEventListener('resize',()=>{homeWorld.resize();battleWorld.resize()});
 </script>
-</body></html>
+<script>if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));</script></body></html>
