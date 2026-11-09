@@ -1,0 +1,11 @@
+{
+  "name": "BLUE LOCK: INFINITE EGO RPG",
+  "short_name": "INFINITE EGO",
+  "description": "Fan-made Blue Lock mobile RPG prototype",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#06101f",
+  "theme_color": "#071426",
+  "orientation": "portrait",
+  "icons": []
+}
